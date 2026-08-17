@@ -39,7 +39,6 @@ namespace PerformanceTweaker
 
         public override void OnUpdate()
         {
-            // Tombol F8 untuk reload config secara instan di dalam game
             if (Input.GetKeyDown(KeyCode.F8))
             {
                 category.LoadFromFile();
@@ -50,7 +49,6 @@ namespace PerformanceTweaker
 
         private void ApplyPerformanceTweaks()
         {
-            // 1. Render Distance
             if (enableRenderDistanceTweak.Value)
             {
                 Camera[] cameras = Camera.allCameras;
@@ -64,14 +62,12 @@ namespace PerformanceTweaker
                 }
             }
 
-            // 2. Disable Shadows
             if (disableShadows.Value)
             {
                 QualitySettings.shadows = ShadowQuality.Disable;
                 QualitySettings.shadowDistance = 0f;
             }
 
-            // 3. Reduce Lighting
             if (reduceLighting.Value)
             {
                 Light[] lights = Object.FindObjectsOfType<Light>();
